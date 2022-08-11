@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Header from "../components/navbar/Header.js";
+import { useContext } from "react";
 
 export default function Home() {
   return (
@@ -12,6 +14,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Header />
         <h1 className={styles.title}>Welcome to YouDemy!</h1>
       </main>
 
