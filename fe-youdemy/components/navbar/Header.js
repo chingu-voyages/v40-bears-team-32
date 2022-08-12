@@ -1,20 +1,33 @@
-import * as React from "react";
+// import * as React from "react";
+// import Link from "next/link";
+// import SmallLogo from "./SmallLogo.js";
+// import { useContext } from "react";
+// import AppBar from "@mui/material/AppBar";
+// import Toolbar from "@mui/material/Toolbar";
+// import Tabs from "@mui/material/Tabs";
+// import Tab from "@mui/material/Tab";
 
-import { useContext } from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+// const Header = () => {
+//   return (
+//     <>
+//       <AppBar sx={{ background: "#2BA7DC" }}>
+//         <Toolbar>
+//           {/* <SmallLogo /> */}
+//           <Tabs sx={{ marginLeft: "auto" }} textColor="inherit">
+//             <Link href="/">
+//               <Tab label="Home"></Tab>
+//             </Link>
+//             <Link href="/about">
+//               <Tab label="About"></Tab>
+//             </Link>
+//             <Link href="/contact">
+//               <Tab label="Contact"></Tab>
+//             </Link>
+//           </Tabs>
+//         </Toolbar>
+//       </AppBar>
+//     </>
+//   );
+// };
 
-const Header = () => {
-  return (
-    <>
-      <AppBar>
-        <Toolbar>
-          <Typography>YouDemy</Typography>
-        </Toolbar>
-      </AppBar>
-    </>
-  );
-};
-
-export default Header;
+// export default Header;
