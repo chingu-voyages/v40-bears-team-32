@@ -12,12 +12,32 @@ export default function Home() {
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   };
 
+  const styles = {
+    card: {
+      background: "#dddddd",
+    },
+    box: {
+      display: "flex",
+      flexDirection: "column",
+      border: "10px solid green",
+      width: "350px",
+    },
+    cardContent: {
+      flex: "1 0 auto",
+    },
+    cardMedia: {
+      width: 350,
+    },
+    cardTitle: {
+      fontSize: 30,
+    },
+  };
   return (
     <>
       <div className="center">
         <h2>Home Page</h2>
       </div>
-      <TextImage content={content} />
+      <TextImage content={content} style={styles} />
     </>
   );
 }

@@ -6,35 +6,28 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 
-const TextImage = ({ content }) => {
-  const theme = useTheme();
-
+const TextImage = ({ content, style }) => {
   return (
-    <Card sx={{ display: "flex", justifyContent: "center", maxWidth: "700px" }}>
+    <Card
+      sx={{
+        ...style.card,
+      }}
+    >
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          border: "1px solid black",
-          width: "350px",
+          ...style.box,
         }}
       >
-        <CardContent sx={{ flex: "1 0 auto" }}>
-          <Typography component="div" variant="h5">
+        <CardContent sx={{ ...style.cardContent }}>
+          <Typography sx={{ ...style.cardTitle }}>
             {content.title && content.title}
           </Typography>
-          <Typography
-            variant="subtitle1"
-            color="text.secondary"
-            component="div"
-          >
-            {content.description && content.description}
-          </Typography>
+          <Typography>{content.description && content.description}</Typography>
         </CardContent>
       </Box>
       <CardMedia
         component="img"
-        sx={{ width: 350 }}
+        sx={{ ...style.cardMedia }}
         image="/public/SmallLogo.png"
         alt="Live from space album cover"
       />
