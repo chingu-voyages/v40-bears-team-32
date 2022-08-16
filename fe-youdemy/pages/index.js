@@ -7,7 +7,7 @@ import Navbar from "../components/navbar/Navbar";
 export default function Home() {
   return (
     <div className="center">
-      <h2>Home Page</h2>
+      <h1>Home Page</h1>
     </div>
   );
 }
