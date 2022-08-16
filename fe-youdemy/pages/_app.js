@@ -1,11 +1,11 @@
 import "../styles/globals.css";
-import Navbar from "../components/navbar/Navbar.js";
+import DrawerAppBar from "../components/navbar/DrawerAppBar.js";
 import Footer from "../components/footer/Footer";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Navbar />
+      <DrawerAppBar />
       <Component {...pageProps} />
       <Footer />
     </>

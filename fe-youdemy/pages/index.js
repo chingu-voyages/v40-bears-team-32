@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Navbar from "../components/navbar/Navbar.js";
+import { useContext } from "react";
 import TextImage from "../components/TextImage.js";
 
 export default function Home() {
