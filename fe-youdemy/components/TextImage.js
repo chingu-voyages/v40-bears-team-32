@@ -1,36 +1,41 @@
 import * as React from "react";
-import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 
-const TextImage = ({ content, style }) => {
+const TextImage = ({ content, styles }) => {
   return (
     <Card
       sx={{
-        ...style.card,
+        ...styles.card,
       }}
     >
+      <CardMedia
+        component="img"
+        sx={{ ...styles.media }}
+        src={content.imageUrl && content.imageUrl}
+        alt={content.imageAltText && content.imageAltText}
+      />
       <Box
         sx={{
-          ...style.box,
+          ...styles.box,
         }}
       >
-        <CardContent sx={{ ...style.cardContent }}>
-          <Typography sx={{ ...style.cardTitle }}>
+        <CardContent sx={{ ...styles.cardContent }}>
+          <Typography sx={{ ...styles.cardTitle }}>
             {content.title && content.title}
           </Typography>
           <Typography>{content.description && content.description}</Typography>
+          <Typography sx={{ ...styles.subTitle }}>
+            {content.subTitle && content.subTitle}
+          </Typography>
+          <Typography sx={{ ...styles.subDescription }}>
+            {content.subDescription && content.subDescription}
+          </Typography>
         </CardContent>
       </Box>
-      <CardMedia
-        component="img"
-        sx={{ ...style.cardMedia }}
-        image="/public/SmallLogo.png"
-        alt="Live from space album cover"
-      />
     </Card>
   );
 };
