@@ -24,7 +24,9 @@ const Navbar = () => {
           <nav className={`nav`}>
             <Link href={"/"}>
               <a>
-                <h1 className="logo">YD</h1>
+                <h1 className="logo">
+                  <img src="YD1.svg" width={80} height={100} />
+                </h1>
               </a>
             </Link>
             <div
