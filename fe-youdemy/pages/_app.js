@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import DrawerAppBar from "../components/newnav/DrawerAppBar.js";
+import DrawerAppBar from "../components/navbar/DrawerAppBar.js";
 import Footer from "../components/footer/Footer";
 
 function MyApp({ Component, pageProps }) {

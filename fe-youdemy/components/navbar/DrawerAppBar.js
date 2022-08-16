@@ -16,11 +16,10 @@ import Button from "@mui/material/Button";
 import Link from "next/link";
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
 const MENU_LIST = [
-  { text: "Home", href: "/" },
-  { text: "About", href: "/about" },
-  { text: "Contact", href: "/contact" },
+  { id: 1, text: "Home", href: "/" },
+  { id: 2, text: "About", href: "/about" },
+  { id: 3, text: "Contact", href: "/contact" },
 ];
 
 function DrawerAppBar(props) {
@@ -34,12 +33,14 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        <img src="YD1.svg" width={80} height={104} />
+        <Button href="/">
+          <img src="YD1.svg" width={80} height={104} />
+        </Button>
       </Typography>
       <Divider />
       <List>
         {MENU_LIST.map((item) => (
-          <ListItem key={item.name} disablePadding>
+          <ListItem key={item.id} disablePadding>
             <ListItemButton href={item.href} sx={{ textAlign: "center" }}>
               <ListItemText primary={item.text} />
             </ListItemButton>
@@ -54,8 +55,8 @@ function DrawerAppBar(props) {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <AppBar component="nav">
-        <Toolbar>
+      <AppBar component="nav" sx={{ background: "#2BA7DC" }}>
+        <Toolbar sx={{ width: "100%" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -70,11 +71,13 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            <img src="YD1.svg" width={80} height={104} />
+            <Button href="/">
+              <img src="YD1.svg" width={80} height={80} />
+            </Button>
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {MENU_LIST.map((item) => (
-              <Button key={item.name} href={item.href} sx={{ color: "#fff" }}>
+              <Button key={item.id} href={item.href} sx={{ color: "#fff" }}>
                 {item.text}
               </Button>
             ))}
