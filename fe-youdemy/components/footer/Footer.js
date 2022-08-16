@@ -3,8 +3,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 // import Logo from "./Logo";
 const MENU_LIST_1 = [
-  { text: "About Page", href: "/" },
-  { text: "Contact Us", href: "/contact-us" },
+  { text: "About Page", href: "/about" },
+  { text: "Contact Us", href: "/contact" },
   { text: "About Us", href: "/about-us" },
   { text: "Term of Use", href: "/term-of-use" },
   { text: "Become a Creator", href: "/become-a-creator" },
@@ -31,7 +31,7 @@ const Footer = () => {
             </Link>
           ))}
         </div>
-        <div>
+        <div className="footer__logo-container">
           <img src="YD1.svg" width={280} height={204} />
         </div>
       </div>
