@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState } from "react";
-// import Logo from "./Logo";
 import NavItem from "./NavItem";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -24,7 +23,9 @@ const Navbar = () => {
           <nav className={`nav`}>
             <Link href={"/"}>
               <a>
-                <h1 className="logo">YD</h1>
+                <h1 className="logo">
+                  <img src="YD1.svg" width={80} height={100} />
+                </h1>
               </a>
             </Link>
             <div
