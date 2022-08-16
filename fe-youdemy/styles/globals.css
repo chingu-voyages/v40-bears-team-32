@@ -59,7 +59,7 @@ nav {
 }
 
 .center {
-  min-height: 600px;
+  min-height: 425px;
   display: flex;
   justify-content: center;
   align-items: center;
