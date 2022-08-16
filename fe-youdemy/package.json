@@ -15,7 +15,9 @@
     "@mui/material": "^5.10.0",
     "next": "12.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sharp": "^0.30.7",
+    "typescript": "^4.7.4"
   },
   "devDependencies": {
     "eslint": "8.21.0",
