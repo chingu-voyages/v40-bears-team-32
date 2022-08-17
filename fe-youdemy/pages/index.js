@@ -55,6 +55,7 @@ export default function Home() {
         <h2>Home Page</h2>
       </div>
       <TextImage content={content} styles={styles} />
+      <TextImage content={content} styles={styles} />
     </>
   );
 }
