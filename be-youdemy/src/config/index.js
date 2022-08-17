@@ -1,8 +1,8 @@
-const consoleLogger = require('./logger/console')
-const fileLogger = require('./logger/file')
+import consoleLogger from "./logger/console";
+import fileLogger from "./logger/file";
 
-const logger = process.env.NODE_ENV == "dev" ? consoleLogger: fileLogger
+const logger = process.env.NODE_ENV == "dev" ? consoleLogger : fileLogger;
 
-module.exports = {
-    logger,
-}
+export default {
+  logger,
+};

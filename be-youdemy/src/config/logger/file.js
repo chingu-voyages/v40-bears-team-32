@@ -1,37 +1,46 @@
-const winston = require('winston')
-const {levels, timestampFormat, logsDir, logFileLimit} = require('./settings')
-require('winston-daily-rotate-file')
+import {
+  format as _format,
+  transports as _transports,
+  createLogger,
+} from "winston";
+import { levels, timestampFormat, logsDir, logFileLimit } from "./settings";
+import "winston-daily-rotate-file";
 
-const format = winston.format.combine(
-    winston.format.timestamp(timestampFormat),
-    winston.format.splat(),
-    winston.format.printf(event => `[${event.timestamp}] (${event.level.toUpperCase()}): ${event.message}`)
-)
+const format = _format.combine(
+  _format.timestamp(timestampFormat),
+  _format.splat(),
+  _format.printf(
+    (event) =>
+      `[${event.timestamp}] (${event.level.toUpperCase()}): ${event.message}`
+  )
+);
 
-const transports = [new winston.transports.DailyRotateFile({
+const transports = [
+  new _transports.DailyRotateFile({
     dirname: logsDir,
-    filename: 'err-%DATE%-.log',
-    datePattern: 'YYYY-MM-DD-HH',
+    filename: "err-%DATE%-.log",
+    datePattern: "YYYY-MM-DD-HH",
     maxsize: logFileLimit,
     maxFiles: 5,
-    handleExceptions:true,
-    handleRejections: true
-})]
+    handleExceptions: true,
+    handleRejections: true,
+  }),
+];
 
 const configs = {
-    level: 'error',
-    levels,
-    format,
-    transports
-}
+  level: "error",
+  levels,
+  format,
+  transports,
+};
 
 /**
  * logger.info("Hello %s", obj.name)
  * logger.error("this is an error")
  * logger.debug("its a debug")
- * 
+ *
  * OUTPUT:
  * [2022-08-16 at 18:26:57] (ERROR): this is an error
  */
 
-module.exports = winston.createLogger(configs)
+export default createLogger(configs);
