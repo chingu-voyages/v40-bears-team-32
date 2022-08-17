@@ -1,5 +1,5 @@
 const winston = require('winston')
-const {levels, timestampFormat, logsDir, logFileLimit} = require('./configs')
+const {levels, timestampFormat, logsDir, logFileLimit} = require('./settings')
 require('winston-daily-rotate-file')
 
 const format = winston.format.combine(

@@ -1,5 +1,5 @@
 const winston = require('winston')
-const {levels} = require('./configs')
+const {levels} = require('./settings')
 
 const format = winston.format.combine(
     winston.format.colorize(),
