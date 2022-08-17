@@ -1,5 +1,6 @@
 const winston = require('winston')
 const {levels, timestampFormat, logsDir, logFileLimit} = require('./configs')
+require('winston-daily-rotate-file')
 
 const format = winston.format.combine(
     winston.format.timestamp(timestampFormat),
@@ -7,9 +8,10 @@ const format = winston.format.combine(
     winston.format.printf(event => `[${event.timestamp}] (${event.level.toUpperCase()}): ${event.message}`)
 )
 
-const transports = [new winston.transports.File({
+const transports = [new winston.transports.DailyRotateFile({
     dirname: logsDir,
-    filename: 'err.log',
+    filename: 'err-%DATE%-.log',
+    datePattern: 'YYYY-MM-DD-HH',
     maxsize: logFileLimit,
     maxFiles: 5,
     handleExceptions:true,
