@@ -1,4 +1,5 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+import { logger } from "../config/index.js";
 
 const connectDB = async () => {
   try {
@@ -7,9 +8,9 @@ const connectDB = async () => {
       useNewUrlParser: true,
     });
 
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    logger.info(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`Error: ${error.message}`);
+    logger.error(`Error: ${error.message}`);
     process.exit(1);
   }
 };
