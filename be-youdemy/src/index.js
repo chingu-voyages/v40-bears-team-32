@@ -3,6 +3,7 @@ import path from "path";
 
 import connectDB from "./config/db.js";
 import { logger } from "./config/index.js";
+import morgan from "./middleware/morgan.js";
 
 const app = express();
 connectDB();
@@ -13,6 +14,8 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
+app.use(morgan);
 
 const PORT = process.env.PORT || 5000;
 
