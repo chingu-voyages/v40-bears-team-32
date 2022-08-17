@@ -1,8 +1,7 @@
-import { withTheme } from "@emotion/react";
 import React from "react";
 import TextImage from "../components/TextImage.js";
-import Reviews from "../components/creator/Reviews.js";
-import Courses from "../components/courses/Courses.js";
+import Reviews from "../components/creator/reviews/Reviews.js";
+import Courses from "../components/creator/courses/Courses.js";
 
 const Creator = () => {
   const content = {
