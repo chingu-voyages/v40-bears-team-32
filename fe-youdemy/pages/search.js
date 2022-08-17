@@ -1,5 +1,5 @@
 import React from "react";
-import SearchResults from "../components/SearchResults.js";
+import SearchResults from "../components/search/SearchResults.js";
 
 export default function Search() {
   const results = [
