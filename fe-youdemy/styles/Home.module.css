@@ -12,6 +12,7 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
 .footer {
   display: flex;
   flex: 1;
@@ -21,6 +22,8 @@
   align-items: center;
 }
 
+=======
+>>>>>>> 09a0cac02eca0052d9c0e56355ab9d9ba63aea86
 .footer a {
   display: flex;
   justify-content: center;
