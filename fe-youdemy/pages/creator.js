@@ -2,6 +2,7 @@ import { withTheme } from "@emotion/react";
 import React from "react";
 import TextImage from "../components/TextImage.js";
 import Reviews from "../components/creator/Reviews.js";
+import Courses from "../components/courses/Courses.js";
 
 const Creator = () => {
   const content = {
@@ -103,9 +104,77 @@ const Creator = () => {
     },
   ];
 
+  const courses = [
+    {
+      id: 1,
+      name: "JavaScript 101",
+      prerequisites: "none",
+      description:
+        "Teaches all the fundamentals of Vanilla JavaScript. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      level: "Beginner",
+      price: "$100",
+    },
+    {
+      id: 2,
+      name: "Ruby 101",
+      prerequisites: "none",
+      description:
+        "teaches all the fundamentals of Ruby. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      level: "Beginner",
+      price: "$100",
+    },
+    {
+      id: 3,
+      name: "Ruby on Rails - Beginner",
+      prerequisites: "Ruby 101",
+      description:
+        "Teaches all the ways to create full stack Ruby on Rails web apps. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      level: "Intermediate",
+      price: "$100",
+    },
+    {
+      id: 3,
+      name: "Ruby on Rails - Intermediate",
+      prerequisites: "Ruby 101 and Ruby on Rails - Beginner",
+      description:
+        "Teaches all the ways to create full stack Ruby on Rails web apps. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      level: "Intermediate",
+      price: "$100",
+    },
+    {
+      id: 4,
+      name: "Ruby on Rails - Advanced",
+      prerequisites:
+        "Ruby 101, Ruby on Rails - Beginner, and Ruby on Rails - Intermediate",
+      description:
+        "Teaches all the ways to create full stack Ruby on Rails web apps. Goes over caching, apis, and much more. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      level: "Advanced",
+      price: "$100",
+    },
+    {
+      id: 5,
+      name: "ReactJS",
+      prerequisites: "JavaScript 101",
+      description:
+        "Teaches all the ways to create ReactJS web apps. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      level: "Advanced",
+      price: "$100",
+    },
+    {
+      id: 6,
+      name: "NodeJS - Intermediate",
+      prerequisites: "JavaScript 101",
+      description:
+        "Teaches all the ways to create full stack JavaScript web apps with NodeJS and express. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      level: "Advanced",
+      price: "$100",
+    },
+  ];
+
   return (
     <div>
       <TextImage styles={styles} content={content} />
+      <Courses courses={courses} />
       <Reviews reviews={reviews} />
     </div>
   );
