@@ -11,7 +11,9 @@ const transports = [new winston.transports.File({
     dirname: logsDir,
     filename: 'err.log',
     maxsize: logFileLimit,
-    maxFiles: 5
+    maxFiles: 5,
+    handleExceptions:true,
+    handleRejections: true
 })]
 
 const configs = {

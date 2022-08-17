@@ -7,7 +7,7 @@ const format = winston.format.combine(
     winston.format.printf(event => `${event.level} - ${event.message}`)
 )
 
-const transports = [new winston.transports.Console()]
+const transports = [new winston.transports.Console({handleExceptions:true, handleRejections: true})]
 
 const maxLevel =  Object.keys(levels).slice(-1)[0]
 
@@ -15,7 +15,7 @@ const configs = {
     level: maxLevel,
     levels,
     format,
-    transports
+    transports,
 }
 
 /**
