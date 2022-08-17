@@ -2,6 +2,9 @@ import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import path from 'path';
+import http from 'http';
+
+const httpServer = http.createServer(app)
 
 dotenv.config();
 const app = express();
@@ -14,6 +17,8 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
+
+
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+httpServer.app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
