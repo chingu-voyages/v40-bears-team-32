@@ -1,5 +1,4 @@
 import React from "react";
-
 import SearchResults from "../components/SearchResults.js";
 
 export default function Search() {
@@ -56,8 +55,11 @@ export default function Search() {
     },
   ];
   return (
-    <>
+    <div>
+      <h1 style={{ textAlign: "center", marginTop: 100 }}>
+        Top Creators that teach "What you searched for"
+      </h1>
       <SearchResults results={results} />
-    </>
+    </div>
   );
 }
