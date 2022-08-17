@@ -14,13 +14,6 @@ const levels = {
     silly: 6
 }
 
-// src: https://github.com/winstonjs/winston#filtering-info-objects
-// this method is used to configure logger to only capture log events of the parameter logLevel
-// Ex: restrictLogEventsTo(error)
-const restrictLogEventsTo = logLevel => {
-    return winston.format(logEvent => logEvent.level !== logLevel ? false: logEvent)
-}
-
 // src: https://github.com/winstonjs/logform#timestamp
 // src: https://github.com/taylorhakes/fecha
 const timestampFormat = {
