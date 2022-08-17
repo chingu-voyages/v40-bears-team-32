@@ -3,4 +3,4 @@
 
 if [[ -t 1 && -t 2 ]]; then exec >/dev/tty 2>&1; fi
 
-cd ./be-youdemy && npx lint-staged
+cd ./be-youdemy && npx lint-staged -q
