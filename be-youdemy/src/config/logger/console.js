@@ -3,7 +3,7 @@ import {
   transports as _transports,
   createLogger,
 } from "winston";
-import { levels } from "./settings";
+import { levels } from "./settings.js";
 
 const format = _format.combine(
   _format.colorize(),

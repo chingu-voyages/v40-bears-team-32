@@ -21,7 +21,7 @@ const timestampFormat = {
 // gets absolute path to backend directory
 const getBackendRootDir = () => {
   const appDirName = "src";
-  const currentFilePath = __dirname;
+  const currentFilePath = import.meta.url;
   const currentFilePathDirs = currentFilePath.split(sep);
   const backendSrcDirIndex = currentFilePathDirs.lastIndexOf(appDirName);
   const backendDirs = currentFilePathDirs.slice(0, backendSrcDirIndex);
@@ -34,9 +34,4 @@ const logsDir = join(getBackendRootDir(), "logs");
 // src: https://stackoverflow.com/questions/1521082/what-is-a-good-size-in-bytes-for-a-log-file
 const logFileLimit = 10 * 1024 * 1024;
 
-export default {
-  levels,
-  timestampFormat,
-  logsDir,
-  logFileLimit,
-};
+export { levels, timestampFormat, logsDir, logFileLimit };

@@ -3,7 +3,7 @@ import {
   transports as _transports,
   createLogger,
 } from "winston";
-import { levels, timestampFormat, logsDir, logFileLimit } from "./settings";
+import { levels, timestampFormat, logsDir, logFileLimit } from "./settings.js";
 import "winston-daily-rotate-file";
 
 const format = _format.combine(

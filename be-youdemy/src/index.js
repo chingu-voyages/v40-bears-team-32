@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import path from "path";
 
 import connectDB from "./config/db.js";
-import { logger } from "./config";
+import { logger } from "./config/index.js";
 
 dotenv.config();
 const app = express();
