@@ -6,8 +6,10 @@ export default function SearchResult(props) {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        width: "100%",
+        maxWidth: 1000,
+        margin: "0 auto",
         padding: 50,
+        marginTop: 50,
       }}
     >
       <img
