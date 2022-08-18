@@ -32,7 +32,7 @@ const Footer = () => {
           ))}
         </div>
         <div className="footer__logo-container">
-          <img src="YD1.svg" width={280} height={204} />
+          <img src="YD.svg" width={280} height={204} />
         </div>
       </div>
     </div>
