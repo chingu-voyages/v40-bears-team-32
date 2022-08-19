@@ -34,7 +34,7 @@ function DrawerAppBar(props) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         <Button href="/">
-          <img src="YD1.svg" width={80} height={104} />
+          <img src="YD.svg" width={80} height={104} />
         </Button>
       </Typography>
       <Divider />
@@ -72,7 +72,7 @@ function DrawerAppBar(props) {
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
             <Button href="/">
-              <img src="YD1.svg" width={80} height={80} />
+              <img src="YD.svg" width={80} height={80} />
             </Button>
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
