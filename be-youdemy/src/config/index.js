@@ -1,9 +1,11 @@
+import { createLogger } from "winston";
 import dotenv from "dotenv";
 dotenv.config();
 
-import consoleLogger from "./logger/console.js";
-import fileLogger from "./logger/file.js";
+import console from "./logger/console.js";
+import file from "./logger/file.js";
 
-const logger = process.env.NODE_ENV == "dev" ? consoleLogger : fileLogger;
+const logger =
+  process.env.NODE_ENV == "dev" ? createLogger(console) : createLogger(file());
 
 export { logger };
