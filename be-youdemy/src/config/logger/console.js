@@ -1,8 +1,4 @@
-import {
-  format as _format,
-  transports as _transports,
-  createLogger,
-} from "winston";
+import { format as _format, transports as _transports } from "winston";
 import { levels } from "./settings.js";
 
 const format = _format.combine(
@@ -36,4 +32,4 @@ const configs = {
  * debug - its a debug
  */
 
-export default createLogger(configs);
+export default configs;
