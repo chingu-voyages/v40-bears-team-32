@@ -1,11 +1,16 @@
 import express from 'express';
 import path from 'path';
 
+import authRoutes from './routes/auth/authRoutes.js';
+
 import morgan from './middleware/morgan.js';
 
 const app = express();
 
+app.use(express.json());
 app.use(morgan);
+
+app.use('/auth', authRoutes);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
