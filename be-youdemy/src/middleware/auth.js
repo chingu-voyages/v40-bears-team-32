@@ -9,7 +9,7 @@ export const protectRoute = (req, res, next) => {
     // Verify/decode token
     jwt.verify(token, process.env.SESSION_SECRET, async (err, decoded) => {
       if (err) next();
-      // If token is valid, search for user with corresponding ID from decoded token
+      // If token is valid (there are no errors), search for user with corresponding ID from decoded token
       const user = await User.findById(decoded.id);
       // Set custom user field into the request with current user data
       req.user = user;
