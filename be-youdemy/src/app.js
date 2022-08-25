@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 
 import authRoutes from './routes/auth/authRoutes.js';
+import videoRoutes from './routes/video/videoRoutes.js'
 
 import morgan from './middleware/morgan.js';
 
@@ -10,7 +11,9 @@ const app = express();
 app.use(express.json());
 app.use(morgan);
 
+
 app.use('/auth', authRoutes);
+app.use('/video', videoRoutes);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
