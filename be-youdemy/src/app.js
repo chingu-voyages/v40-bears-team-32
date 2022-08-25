@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser';
 import path from 'path';
 
 import authRoutes from './routes/auth/authRoutes.js';
+import videoRoutes from './routes/video/videoRoutes.js';
 
 import morgan from './middleware/morgan.js';
 import { protectRoute } from './middleware/auth.js';
@@ -15,6 +16,7 @@ app.use(morgan);
 app.use(protectRoute());
 
 app.use('/auth', authRoutes);
+app.use('/videos', videoRoutes);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
