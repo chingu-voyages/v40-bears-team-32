@@ -102,6 +102,7 @@ export default function Search() {
   ]);
 
   const [input, setInput] = useState("");
+  const [filteredResults, setFilteredResults] = useState([]);
 
   const onChange = (event) => {
     setInput(event.target.value);
@@ -114,22 +115,7 @@ export default function Search() {
         return result;
       }
     });
-    setResults(filteredResults);
-  };
-
-  const sortByName = () => {
-    const sortResults = [...results].sort((a, b) => {
-      let nameA = a.name.toUpperCase();
-      let nameB = b.name.toUpperCase();
-      if (nameA > nameB) {
-        return 1;
-      }
-      if (nameA < nameB) {
-        return -1;
-      }
-      return 0;
-    });
-    setResults(sortResults);
+    setFilteredResults(filteredResults);
   };
 
   return (
@@ -152,8 +138,7 @@ export default function Search() {
           />
         </Search>
       </div>
-      <div onClick={sortByName}>sort</div>
-      <SearchResults results={results} />
+      <SearchResults filteredResults={filteredResults} />
     </div>
   );
 }
