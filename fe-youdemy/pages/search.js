@@ -1,8 +1,54 @@
 import React from "react";
 import SearchResults from "../components/search/SearchResults.js";
+import { styled, alpha } from "@mui/material/styles";
+import InputBase from "@mui/material/InputBase";
+import SearchIcon from "@mui/icons-material/Search";
+import { useState } from "react";
 
 export default function Search() {
-  const results = [
+  const Search = styled("div")(({ theme }) => ({
+    position: "relative",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    "&:hover": {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
+    },
+    marginLeft: 0,
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(1),
+      width: "auto",
+    },
+  }));
+
+  const SearchIconWrapper = styled("div")(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }));
+
+  const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: "inherit",
+    "& .MuiInputBase-input": {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      transition: theme.transitions.create("width"),
+      width: "100%",
+      [theme.breakpoints.up("sm")]: {
+        width: "12ch",
+        "&:focus": {
+          width: "20ch",
+        },
+      },
+    },
+  }));
+
+  const [results, setResults] = useState([
     {
       id: 1,
       imageUrl:
@@ -53,12 +99,60 @@ export default function Search() {
       description:
         "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
-  ];
+  ]);
+
+  const [input, setInput] = useState("");
+
+  const onChange = (event) => {
+    setInput(event.target.value);
+    const filteredResults = [...results].filter((result) => {
+      if (event.target.result === "") {
+        return result;
+      } else if (
+        result.headline.toLowerCase().includes(event.target.value.toLowerCase())
+      ) {
+        return result;
+      }
+    });
+    setResults(filteredResults);
+  };
+
+  const sortByName = () => {
+    const sortResults = [...results].sort((a, b) => {
+      let nameA = a.name.toUpperCase();
+      let nameB = b.name.toUpperCase();
+      if (nameA > nameB) {
+        return 1;
+      }
+      if (nameA < nameB) {
+        return -1;
+      }
+      return 0;
+    });
+    setResults(sortResults);
+  };
+
   return (
     <div>
-      <h1 style={{ textAlign: "center", marginTop: 100 }}>
-        Top Creators that teach "What you searched for"
+      <h1 style={{ textAlign: "center", marginTop: 50 }}>
+        What are you looking to learn?
       </h1>
+      <div className="search-bar-container">
+        <Search>
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
+          <StyledInputBase
+            placeholder="Search…"
+            inputProps={{ "aria-label": "search" }}
+            type="text"
+            onChange={onChange}
+            value={input}
+            autoFocus
+          />
+        </Search>
+      </div>
+      <div onClick={sortByName}>sort</div>
       <SearchResults results={results} />
     </div>
   );

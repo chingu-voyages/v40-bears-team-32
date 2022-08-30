@@ -229,3 +229,10 @@ nav {
 .info-container {
   padding-left: 20px;
 }
+
+.search-bar-container {
+  text-align: center;
+  border-bottom: 1px solid black;
+  width: 900px;
+  margin: 100px auto 0px auto;
+}
