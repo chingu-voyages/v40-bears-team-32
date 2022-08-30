@@ -127,50 +127,32 @@ nav {
     background-color: black;
     transition: all 0.2s;
   }
-
 }
 
 .footer {
   display: flex;
   justify-content: center;
-  align-items: center;
-
-  height: 651px;
+  padding: 100px;
   background-color: #2ba7dc;
   width: 100vw;
   margin-top: 50px;
-}
-
-.footer__inner-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* align-items: start; */
-
-  height: 500px;
-  width: 1400px;
-
-  background-color: #2ba7dc;
 }
 
 .footer__button-container {
   display: flex;
   flex-direction: column;
   width: 300px;
-
   align-items: start;
   padding: 24px;
-
   margin-right: 100px;
 }
 
 .footer__button {
-  font-size: 32px;
+  font-size: 18px;
   font-weight: normal;
   width: 320px;
   height: 40px;
   color: #ffffff;
-  margin-bottom: 40px;
   cursor: pointer;
 }
 
@@ -183,8 +165,6 @@ nav {
   width: 900px;
   margin: 0 auto;
 }
-
-
 
 .main-video {
   width: 900px;
