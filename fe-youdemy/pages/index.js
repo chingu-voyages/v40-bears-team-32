@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Hero from "../components/hero/Hero";
+import Hero from '../components/Hero/Hero'
 import TextImage from "../components/TextImage.js";
 
 export default function Home() {
@@ -51,6 +51,7 @@ export default function Home() {
 
   return (
     <>
+      <Hero />
       <TextImage content={content} styles={styles} />
       <TextImage content={content} styles={styles} />
     </>
