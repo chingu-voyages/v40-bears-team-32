@@ -21,8 +21,7 @@ const videoSchema = mongoose.Schema(
       type: [],
     },
     userId: {
-      type: Number,
-      required: true,
+      driver: mongoose.ObjectId,
     },
   },
   {

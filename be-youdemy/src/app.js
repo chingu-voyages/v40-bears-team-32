@@ -4,6 +4,7 @@ import path from 'path';
 
 import authRoutes from './routes/auth/authRoutes.js';
 import videoRoutes from './routes/video/videoRoutes.js';
+import commentsRoutes from './routes/comments/commentsRoutes.js';
 
 import morgan from './middleware/morgan.js';
 
@@ -15,6 +16,7 @@ app.use(morgan);
 
 app.use('/auth', authRoutes);
 app.use('/videos', videoRoutes);
+app.use('/comments', commentsRoutes);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
