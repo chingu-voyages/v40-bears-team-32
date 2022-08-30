@@ -3,10 +3,12 @@ import mongoose from 'mongoose';
 const commentSchema = mongoose.Schema(
   {
     videoId: {
-      driver: mongoose.ObjectId,
+      type: String,
+      required: true,
     },
     userId: {
-      driver: mongoose.ObjectId,
+      type: String,
+      required: true,
     },
     comment: {
       type: String,
