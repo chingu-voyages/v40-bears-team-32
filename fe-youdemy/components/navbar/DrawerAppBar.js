@@ -21,6 +21,7 @@ const MENU_LIST = [
   { id: 2, text: "About", href: "/about" },
   { id: 3, text: "Contact", href: "/contact" },
   { id: 4, text: "Search", href: "/search" },
+  { id: 5, text: "Login", href: "/login"},
 ];
 
 function DrawerAppBar(props) {
