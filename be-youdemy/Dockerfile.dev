@@ -1,0 +1,29 @@
+# https://stackoverflow.com/a/71422895/12369650
+FROM node:16
+
+# src: https://www.youtube.com/watch?v=5JQlFK6MdVQ
+# Create project directory inside container
+WORKDIR /home/app
+
+# Intall app dependencies
+COPY ./package.json ./
+COPY ./package-lock.json ./
+# Disable husky install
+RUN npm set-script prepare ''
+RUN npm install
+
+# Copy all files in current dir into container project directory
+COPY . .
+
+# Don't use root user
+USER node
+
+# Expose port
+EXPOSE 8000
+
+# Run app
+CMD ["npm", "run", "dev"]
+
+# Note: update node_modules whenever new packages are installed
+#   use docker compose -V
+#   or docker build

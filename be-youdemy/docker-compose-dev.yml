@@ -1,0 +1,35 @@
+# Update images if package.json changes: docker compose -f docker-compose-dev.yml build
+# start docker & app: docker compose -f docker-compose-dev.yml up
+# stop docker & app: docker compose -f docker-compose-dev.yml down
+
+services:
+  api:
+    container_name: be-youdemy
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8000:8000"
+    networks:
+      - be-youdemy
+    volumes:
+      - ./:/home/app
+      - /home/app/node_modules/
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    logging:
+      driver: none
+    ports:
+      - "27017:27017"
+    networks:
+      - be-youdemy
+    volumes:
+      - mongo-data:/data/db
+networks:
+  be-youdemy:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local
