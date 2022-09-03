@@ -8,9 +8,7 @@ body {
 
 a {
   color: inherit;
-<<<<<<< HEAD
   text-decoration: none;
-=======
 }
 header {
   position: sticky;
@@ -57,18 +55,12 @@ nav {
   font-size: 18px;
   position: relative;
   transition: all 0.2s;
->>>>>>> 09a0cac02eca0052d9c0e56355ab9d9ba63aea86
 }
 
 * {
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-=======
 .center {
   display: flex;
   justify-content: center;
@@ -134,15 +126,9 @@ nav {
     left: 0;
     background-color: black;
     transition: all 0.2s;
->>>>>>> 09a0cac02eca0052d9c0e56355ab9d9ba63aea86
   }
-  body {
-    color: white;
-    background: black;
-  }
+
 }
-<<<<<<< HEAD
-=======
 
 .footer {
   display: flex;
@@ -181,12 +167,10 @@ nav {
 .footer__button {
   font-size: 32px;
   font-weight: normal;
-
   width: 320px;
   height: 40px;
   color: #ffffff;
   margin-bottom: 40px;
-
   cursor: pointer;
 }
 
@@ -195,4 +179,61 @@ nav {
   margin-left: 0.5rem;
 }
 
->>>>>>> 09a0cac02eca0052d9c0e56355ab9d9ba63aea86
+.video-page-container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+
+
+.main-video {
+  width: 900px;
+  height: 100%;
+  border-radius: 30px;
+  margin: 25px 0;
+}
+
+.video-description {
+  width: 45%;
+  padding: 0px 0px 15px 0px;
+}
+
+.description-video-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.video-list {
+  width: 48%;
+  padding: 0px 0px 15px 0px;
+}
+
+.individual-video-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.individual-video-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-thumbnail {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.info-container {
+  padding-left: 20px;
+}
+
+.search-bar-container {
+  text-align: center;
+  border-bottom: 1px solid black;
+  width: 900px;
+  margin: 100px auto 0px auto;
+}
+
