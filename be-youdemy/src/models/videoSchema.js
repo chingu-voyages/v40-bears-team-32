@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const videoSchema = mongoose.Schema(
   {
@@ -30,6 +30,6 @@ const videoSchema = mongoose.Schema(
   }
 );
 
-const Video = mongoose.model('Video', videoSchema);
+const Video = mongoose.model("Video", videoSchema);
 
 export default Video;

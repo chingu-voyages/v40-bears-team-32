@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const commentSchema = mongoose.Schema(
   {
@@ -20,6 +20,6 @@ const commentSchema = mongoose.Schema(
   }
 );
 
-const Comment = mongoose.model('Comment', commentSchema);
+const Comment = mongoose.model("Comment", commentSchema);
 
 export default Comment;

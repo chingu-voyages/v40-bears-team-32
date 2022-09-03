@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
 
-import User from '../models/userSchema';
+import User from "../models/userSchema";
 
 export const protectRoute = (req, res, next) => {
   const token = req.cookies.token;
