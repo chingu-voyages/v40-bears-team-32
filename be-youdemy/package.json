@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "prepare": "cd ../ && husky install ./be-youdemy/.husky",
-    "dev": "NODE_ENV=dev nodemon ./src/index.js",
+    "dev": "NODE_ENV=dev node ./scripts/seed-dev.js && nodemon ./src/index.js",
     "start": "NODE_ENV=prod node ./src/index.js",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --verbose --runInBand",
     "lint": "eslint ./src",
