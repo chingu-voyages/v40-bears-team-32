@@ -1,4 +1,4 @@
-import { logger } from "../src/config/index";
+import { logger } from "../src/config/index.js";
 import { connectDB, disconnectDB } from "../src/config/db.js";
 import User from "../src/models/userSchema.js";
 import UserService from "../src/services/userService.js";
@@ -76,8 +76,8 @@ const displayDatabase = async () => {
   const res = await UserService.getAll();
   const res2 = await VideoService.getAll();
 
-  logger.info("Users:\n", res.toString());
-  logger.info("Videos:\n", res2.toString());
+  logger.info("Users:\n%s", res.toString());
+  logger.info("Videos:\n%s", res2.toString());
 };
 
 const seed = async () => {
