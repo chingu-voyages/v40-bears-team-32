@@ -1,4 +1,5 @@
 import Course from "../models/courseSchema.js";
+import User from "../models/userSchema.js";
 import { logger } from "../config/index.js";
 
 // Get all courses
@@ -28,6 +29,9 @@ export const getCoursesByInstructorId = async (req, res) => {
 export const newCourse = async (req, res) => {
   try {
     const { name, prerequisites, description, level, price, userId } = req.body;
+    const user = await User.findById(userId);
+    if (!user || !user.isInstructor)
+      return res.status(400).send("You are not logged in as an instructor");
     const newCourse = await Course.create({
       name,
       prerequisites,
@@ -36,7 +40,8 @@ export const newCourse = async (req, res) => {
       price,
       userId,
     });
-
+    user.courses.push(newCourse);
+    user.save();
     res.status(200).send(newCourse);
   } catch (error) {
     logger.info(error);

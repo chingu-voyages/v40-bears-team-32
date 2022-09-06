@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
+import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 
 const userSchema = mongoose.Schema(
   {
@@ -20,10 +20,29 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    // Attributes to be used by instructors only
     isInstructor: {
       type: Boolean,
       required: true,
       default: false,
+    },
+    profileDescription: {
+      type: String,
+    },
+    headline: {
+      type: String,
+    },
+    skills: {
+      type: [],
+    },
+    imageUrl: {
+      type: String,
+    },
+    imageAltText: {
+      type: String,
+    },
+    courses: {
+      type: [],
     },
   },
   {
@@ -35,14 +54,14 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-userSchema.pre('save', async function (next) {
-  if (!this.isModified('password')) {
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
     next();
   }
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 
 export default User;
