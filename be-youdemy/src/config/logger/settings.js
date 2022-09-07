@@ -1,4 +1,5 @@
 import { sep, join } from "path";
+import { fileURLToPath } from "url";
 
 // Winston default log levels
 // src: https://github.com/winstonjs/winston#logging-levels
@@ -21,7 +22,8 @@ const timestampFormat = {
 // gets absolute path to backend directory
 const getBackendRootDir = () => {
   const appDirName = "src";
-  const currentFilePath = import.meta.url;
+  // src: https://github.com/nodejs/node/issues/28114
+  const currentFilePath = fileURLToPath(import.meta.url);
   const currentFilePathDirs = currentFilePath.split(sep);
   const backendSrcDirIndex = currentFilePathDirs.lastIndexOf(appDirName);
   const backendDirs = currentFilePathDirs.slice(0, backendSrcDirIndex);
