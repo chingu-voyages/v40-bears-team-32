@@ -1,14 +1,20 @@
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+
 import './App.css';
-import DrawerAppBar from './components/DrawerAppBar';
-import Footer from './components/Footer';
-import Home from './components/Home';
+import Header from "./components/Header";
+import Home from "./pages/Home"
 
 function App() {
   return (
     <div className="App">
-      <DrawerAppBar />
-      <Home />
-      <Footer />
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
