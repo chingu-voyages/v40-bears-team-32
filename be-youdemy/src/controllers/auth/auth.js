@@ -24,10 +24,8 @@ export const registerUser = async (req, res) => {
     res.cookie("token", token, { httpOnly: true, maxAge: 8640000 });
 
     const newUser = {
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      isInstructor: user.isInstructor,
+      ...user,
+      password: "",
     };
 
     res.json(newUser);
@@ -57,10 +55,8 @@ export const loginUser = async (req, res) => {
       res.cookie("token", token, { httpOnly: true, maxAge: 8640000 });
 
       const newUser = {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        isInstructor: user.isInstructor,
+        ...user,
+        password: "",
       };
 
       res.json(newUser);

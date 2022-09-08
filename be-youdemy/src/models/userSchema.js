@@ -28,18 +28,22 @@ const userSchema = mongoose.Schema(
     },
     profileDescription: {
       type: String,
+      default: "",
     },
     headline: {
       type: String,
+      default: "",
     },
     skills: {
       type: [],
     },
     imageUrl: {
       type: String,
+      default: "",
     },
     imageAltText: {
       type: String,
+      default: "",
     },
     courses: {
       type: [],
