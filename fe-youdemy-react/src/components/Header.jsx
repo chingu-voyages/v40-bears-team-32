@@ -42,18 +42,18 @@ const Header = (props) => {
 }
 
 const Nav = styled.nav`
+width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  height: 5rem;
+  /* height: 5rem; */
   background-color: rgba(43, 167, 220, 0.90);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 2rem;
+  padding: 1rem 2rem;
   letter-spacing: 1rem;
-  z-index: 3;
+  z-index: 1;
 `
 
 const NavMenu = styled.div`

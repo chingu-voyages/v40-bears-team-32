@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Link} from 'react-router-dom'
 
-const Home = (props) => {
+const Landing = (props) => {
     return (
         <Container>
             <Content>
@@ -124,4 +124,4 @@ const Description = styled.p`
 const Divider = styled.hr`
   width: 100%;
 `
-export default Home
+export default Landing

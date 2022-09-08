@@ -3,7 +3,7 @@ import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css';
 import Header from "./components/Header";
-import Home from "./pages/Home"
+import Landing from "./pages/Landing"
 import Register from "./pages/Register"
 import Login from "./pages/Login";
 import UserHome from "./pages/UserHome";
@@ -14,7 +14,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/user-home" element={<UserHome />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register/:type" element={<Register />} />
