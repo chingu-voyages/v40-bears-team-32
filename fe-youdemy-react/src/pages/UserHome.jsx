@@ -20,9 +20,9 @@ const UserHome = (props) => {
                     <Title>Your Profile</Title>
                 </section>
                 <RowContainer>
-                    <figure>
-                        <SvgContainer src={user._doc.imageUrl ? user._doc.imageUrl: "/images/male-icon.svg" } alt="" />
-                    </figure>
+                    <ImgContainer>
+                        <Img src={user._doc.imageUrl ? user._doc.imageUrl: "/images/male-icon.svg" } alt="" />
+                    </ImgContainer>
                     <ColumnContainer>
                         <TextBox>
                             <p>{userProfile.name}</p>
@@ -63,6 +63,7 @@ const ProfileContainer = styled.div`
     background-color: rgba(43, 167, 220, 1);
     margin: 2rem 0;
     width: 80%;
+    border-radius: 0.5rem;
 `
 
 const Title = styled.div`
@@ -78,7 +79,8 @@ const Title = styled.div`
 const RowContainer = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-evenly;
     margin: 1rem;
 `
 
@@ -86,11 +88,21 @@ const ColumnContainer = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    flex-grow: 2;
+    margin: 2rem;
 `
 
-const SvgContainer = styled.img`
-    height: 70%;
-    width: auto;
+const ImgContainer = styled.figure`
+    display: inline-block;
+    box-shadow: 3px 3px 5px 4px rgba(0,0,0,0.3);
+    margin: 2rem;
+    background-color: white;
+`
+
+const Img = styled.img`
+    width: 100%;
+    vertical-align: top;
 `
 
 const TextBox = styled.div`
