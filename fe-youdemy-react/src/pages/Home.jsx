@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 
 const Home = (props) => {
     return (
@@ -7,13 +8,19 @@ const Home = (props) => {
                 <BgImage />
                 <Background>
                     <Title>Youdemy</Title>
-                    <Join>Join Now</Join>
-                    <Description>
-                        Looking for a jumpstart into a new career?
-                        Everything is a la carte.
-                        Learn at your own pace.
-                        Create your dreams one class at a time.
-                    </Description>
+                    <TextBlock>
+                      <Subtitle>Looking to Learn?</Subtitle>
+                      <Description>
+                        Jumpstart your career by learning from our expert instructors
+                      </Description>
+                      <Join to="/register/student">New Student</Join>
+                      <Divider />
+                      <Subtitle>Looking to Teach?</Subtitle>
+                      <Description>
+                          Start teaching on our creator-friendly e-learning platform
+                      </Description>
+                      <Join to="/register/instructor">New Instructor</Join>
+                    </TextBlock>
                 </Background>
             </Content>
         </Container>
@@ -47,7 +54,7 @@ const BgImage = styled.div`
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://images.unsplash.com/photo-1584697964358-3e14ca57658b");
+  background-image: url("/images/hero.jfif");
   position: absolute;
   top: 0;
   right: 0;
@@ -72,32 +79,49 @@ const Title = styled.h1`
     letter-spacing: 0.5rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    margin: 1rem 0;
 `
 
-const Join = styled.a`
+const Subtitle = styled.h2`
+  margin:0;
+`
+
+const Join = styled(Link)`
   font-weight: bold;
-  background-color: white;
-  color: rgba(43, 167, 220, 1);
-  margin-bottom: 12px;
-  width: 35%;
-//   letter-spacing: 1.5px;
-  font-size: 1rem;
+  background-color: rgba(35, 31, 32, 1);
+  color: white;
+  width: 75%;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
   padding: 16.5px 0;
-  border: 1px solid white;
   border-radius: 0.5rem;
+  transition: all 0.2s ease 0s;
   &:hover {
-    color: #f9f9f9;
-    background-color: rgba(43, 167, 220, 1);
+    color: rgba(35, 31, 32, 1);
+    background-color: white;
   }
 `;
 
+const TextBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+`
+
 const Description = styled.p`
+  margin: 0;
   color: hsla(0, 0%, 95.3%, 1);
   font-size: 1rem;
-  margin: 1.5rem 0 1.5rem 0;
-  line-height: 1.5;
-  letter-spacing: 1.5px;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
   font-weight: bold;
 `;
 
+const Divider = styled.hr`
+  width: 100%;
+`
 export default Home

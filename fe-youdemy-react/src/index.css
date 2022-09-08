@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
@@ -7,17 +9,132 @@ html {
 }
 
 body {
-  background-color: #040714;
+  background-color: rgb(12, 52, 70);
   color: #f9f9f9;
-
-  font-family: Avenir-Roman, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
+  padding-top: 6rem;
+}
+
+h1, p {
+  margin: 0;
+}
+
+.heading {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.heading h1, p {
+  margin: 1rem;
+}
+
+.form,
+.content {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-family: inherit;
+  outline: none;
+  color:  rgb(12, 52, 70);
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: rgb(12, 52, 70);
+  box-shadow: 0 0 0 3px rgba(43, 167, 220, 0.90);
+}
+
+.form-group label {
+  text-align: left;
+  display: block;
+  margin: 0 0 5px 3px;
+}
+
+.form-group input::placeholder {
+  color: rgba(43, 167, 220, 0.90);
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 a {
   color: #f9f9f9;
   text-decoration: none;
+}
+
+.btn {
+  border-color: transparent;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #000;
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  appearance: button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease 0s;
+
+}
+
+.btn-black {
+  background-color: rgba(35, 31, 32, 1);
+}
+
+.btn-white {
+  background-color: white;
+  color: rgba(35, 31, 32, 1);
+}
+
+.btn svg {
+  margin-right: 8px;
+}
+
+.btn-reverse {
+  background: #fff;
+  color: #000;
+}
+
+.btn-block {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.btn-black:hover {
+  transform: scale(0.98);
+  background-color: white;
+  color: rgba(35, 31, 32, 1);
+}
+
+.btn-white:hover {
+  transform: scale(0.98);
+  background-color: rgba(35, 31, 32, 1);
+  color: white;
 }
 
 @media only screen and (min-width: 768px) {
@@ -29,9 +146,17 @@ a {
   body {
     font-size: 15px;
   }
+
+  .form {
+    width: 90%;
+  }
 }
 @media only screen and (max-width: 479px) {
   body {
       font-size: 14px;
+  }
+
+  .form {
+    width: 90%;
   }
 }
