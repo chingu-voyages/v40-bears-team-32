@@ -1,29 +1,44 @@
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import {logout, reset} from "../features/auth/authSlice"
 
 const Header = (props) => {
-    return (
-        <Nav>
-            <Logo>
-                <img src="/images/YD.svg" alt="youdemy logo" />
-            </Logo>
-            <NavMenu>
-            <NavMenuLink to="/">
-              <img src="/images/Home.svg" alt="HOME" />
-              <span>HOME</span>
-            </NavMenuLink>
-            <NavMenuLink to="/courses">
-              <img src="/images/School.svg" alt="COURSES" />
-              <span>COURSES</span>
-            </NavMenuLink>
-            <NavMenuLink to="/">
-              <img src="/images/Search.svg" alt="SEARCH" />
-              <span>SEARCH</span>
-            </NavMenuLink>
-          </NavMenu>
-          <Auth to="/login">Login</Auth>
-        </Nav>
-    )
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const {user} = useSelector((state) => state.auth)
+
+  const onLogout = () => {
+    dispatch(logout())
+    dispatch(reset())
+    navigate('/')
+  }
+
+  return (
+      <Nav>
+          <Logo>
+              <img src="/images/YD.svg" alt="youdemy logo" />
+          </Logo>
+          <NavMenu>
+          <NavMenuLink to="/">
+            <img src="/images/Home.svg" alt="HOME" />
+            <span>HOME</span>
+          </NavMenuLink>
+          <NavMenuLink to="/courses">
+            <img src="/images/School.svg" alt="COURSES" />
+            <span>COURSES</span>
+          </NavMenuLink>
+          <NavMenuLink to="/">
+            <img src="/images/Search.svg" alt="SEARCH" />
+            <span>SEARCH</span>
+          </NavMenuLink>
+        </NavMenu>
+        {user 
+          ? (<Logout onClick={onLogout}>Logout</Logout>) 
+          : (<Auth to="/login">Login</Auth>)
+        }
+      </Nav>
+  )
 }
 
 const Nav = styled.nav`
@@ -115,11 +130,12 @@ const Logo = styled.a`
   }
 `;
 
-const AuthContainer = styled.div`
-  display: flex;
-  gap: 1rem;
-  justify-content: space-evenly;
-`
+// Use if you want login and register on the header
+// const AuthContainer = styled.div`
+//   display: flex;
+//   gap: 1rem;
+//   justify-content: space-evenly;
+// `
 
 const Auth = styled(NavMenuLink)`
   background-color: rgba(35, 31, 32, 1);
@@ -135,5 +151,21 @@ const Auth = styled(NavMenuLink)`
     border-color: transparent;
   }
 `;
+
+const Logout = styled.button`
+  color: rgb(249, 249, 249);
+  background-color: rgba(35, 31, 32, 1);
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  /* border: 1px solid #f9f9f9; */
+  border-radius: 4px;
+  transition: all 0.2s ease 0s;
+  &:hover {
+    background-color: #f9f9f9;
+    color: #000;
+    border-color: transparent;
+  }
+`
 
 export default Header
