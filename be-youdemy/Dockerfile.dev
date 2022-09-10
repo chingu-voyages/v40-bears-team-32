@@ -22,7 +22,7 @@ USER node
 EXPOSE 8000
 
 # Run app
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "docker-dev"]
 
 # Note: update node_modules whenever new packages are installed
 #   use docker compose -V

@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "prepare": "cd ../ && husky install ./be-youdemy/.husky",
-    "dev": "cross-env NODE_ENV=dev node ./scripts/seed-dev.js && cross-env NODE_ENV=dev nodemon ./src/index.js",
+    "seed": "cross-env NODE_ENV=dev node ./scripts/seed-dev.js && cross-env NODE_ENV=dev nodemon ./src/index.js",
+    "docker-dev": "cross-env NODE_ENV=dev node ./scripts/clear-database.js && cross-env NODE_ENV=dev nodemon ./src/index.js",
+    "dev": "cross-env NODE_ENV=dev nodemon ./src/index.js",
     "start": "cross-env NODE_ENV=prod node ./src/index.js",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --verbose --runInBand",
     "lint": "eslint ./src",
