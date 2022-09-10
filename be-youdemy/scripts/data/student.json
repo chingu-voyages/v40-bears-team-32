@@ -1,0 +1,13 @@
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "johndoe@email.com",
+    "password": "123",
+    "isInstructor": "false",
+    "bio": "Computer Science student, studying to become a Web Developer",
+    "tagline": "Stuck in Tutorial Hell",
+    "skills": ["javascript", "css"],
+    "profilePic": "",
+    "enrolledCourses": [],
+    "createdCourses": []
+}

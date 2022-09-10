@@ -1,0 +1,13 @@
+{
+    "firstName": "Admin",
+    "lastName": "Sample",
+    "email": "admin@email.com",
+    "password": "123",
+    "isInstructor": "true",
+    "bio": "Admin User",
+    "tagline": "Super User",
+    "skills": ["javascript", "css", "java", "python", "golang"],
+    "profilePic": "",
+    "enrolledCourses": [],
+    "createdCourses": []
+}
