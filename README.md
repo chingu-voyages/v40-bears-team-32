@@ -1,14 +1,36 @@
-# voyage-tasks
+# Youdemy
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+## About
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+- Fullstack Udemy clone built with the MERN stack
+- Project was created to be submitted in Chingu's 40th voyage
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+## Features
+- ✅ User signup, login, and logout
+- ❌ User profile
+- ❌ Instructor profile
+- ❌ Create & manage courses 
+- ❌ View courses
+- ❌ Purchase courses
+- ❌ Comment on course videos
+- ❌ Track course progress
+- ❌ Schedule session with instructor
 
-> Own it & Make it your Own!
+## Demo
+
+https://user-images.githubusercontent.com/14286113/190918386-77baf1ac-efbc-40dc-a4f3-ed9cd174805c.mp4
+
+## Built With
+- Express.js
+- MongoDB
+- Docker
+- React
+
+## Development Methodology
+- [Kanban board](https://trello.com/b/9uNTycAs/chingu-bears-32-kanban-board)
+
+## Status
+- Development on this repo has been stopped
+- See forks for current development progress:
+  - [Fork #1](https://github.com/riboney-hobby/v40-bears-team-32)
+
