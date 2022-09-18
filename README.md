@@ -25,6 +25,7 @@ https://user-images.githubusercontent.com/14286113/190918386-77baf1ac-efbc-40dc-
 - MongoDB
 - Docker
 - React
+- Redux
 
 ## Development Methodology
 - [Kanban board](https://trello.com/b/9uNTycAs/chingu-bears-32-kanban-board)
